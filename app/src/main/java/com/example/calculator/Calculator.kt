@@ -30,10 +30,9 @@ fun Calculator(
     Box(modifier = modifier)
     {
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter),
-            verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             Text(
                 text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
@@ -47,7 +46,7 @@ fun Calculator(
                 maxLines = 2
             )
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
                 CalculatorButton(
@@ -83,7 +82,7 @@ fun Calculator(
 
             }
             Row(
-                modifier = modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
                 CalculatorButton(
@@ -125,9 +124,9 @@ fun Calculator(
                     onClick = {
                         onAction(CalculatorAction.Operation(CalculatorOperation.Multiply))
                     }
-                )
+                )}
                 Row(
-                    modifier = modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
                 ) {
                     CalculatorButton(
@@ -169,9 +168,9 @@ fun Calculator(
                         onClick = {
                             onAction(CalculatorAction.Operation(CalculatorOperation.Subtract))
                         }
-                    )
+                    )}
                     Row(
-                        modifier = modifier.fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
                     ) {
                         CalculatorButton(
@@ -214,9 +213,10 @@ fun Calculator(
                                 onAction(CalculatorAction.Operation(CalculatorOperation.Add))
                             }
                         )
+
                     }
                     Row(
-                        modifier = modifier.fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
                     ) {
                         CalculatorButton(
@@ -253,5 +253,4 @@ fun Calculator(
                 }
             }
         }
-    }
-}
+
